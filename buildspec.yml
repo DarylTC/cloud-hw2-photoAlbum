@@ -45,9 +45,9 @@ phases:
       - cd LF2-search-photos
       - zip -r LF2-search-photos-test.zip .
       - aws s3 cp "./LF2-search-photos-test.zip" "s3://hw2-cloud-dc4676-deploy/"
-      - pwd
+      # - pwd
       # - aws s3 sync "./codebuild/output/LF1-index-photos-test.zip" "s3://hw2-cloud-dc4676-deploy/"
-      - aws s3 sync "./codebuild/output/*/src/LF2-search-photos-test.zip" "s3://hw2-cloud-dc4676-deploy/"
+      # - aws s3 sync "./codebuild/output/*/src/LF2-search-photos-test.zip" "s3://hw2-cloud-dc4676-deploy/"
       # - command
   post_build:
     commands:
