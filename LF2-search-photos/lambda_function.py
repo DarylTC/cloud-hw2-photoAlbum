@@ -10,7 +10,8 @@ import requests
 
 def lambda_handler(event, context):
     
-    test_body_message = 'show me the photos with trees and birds in them'
+    # test_body_message = 'trees'
+    body_message = event['queryStringParameters']["q"]
     
     # Lex
     lex_client = boto3.client('lex-runtime')
@@ -18,9 +19,9 @@ def lambda_handler(event, context):
       botName='Search_Photos',
       botAlias='dev',
       userId='cloud',
-      inputText=test_body_message
+      inputText=body_message
     )
-    
+    print(response)
     keyword_one = response['slots']['keywordOne']
     keyword_two = response['slots']['keywordTwo']
     print(keyword_one,keyword_two)
