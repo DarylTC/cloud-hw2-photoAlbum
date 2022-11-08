@@ -36,8 +36,8 @@ phases:
   build:
     commands:
       - ls
-      - zip LF1-index-photos-test.zip ./codebuild/output/
-      - zip LF2-search-photos-test.zip .
+      - zip ./codebuild/output/LF1-index-photos-test.zip ./LF1-index-photos
+      - zip ./codebuild/output/LF2-search-photos-test.zip ./LF2-search-photos
       - pwd
       - aws s3 sync "./codebuild/output/LF1-index-photos-test.zip" "s3://hw2-cloud-dc4676-deploy/"
       - aws s3 sync "./codebuild/output/*/src/LF2-search-photos-test.zip" "s3://hw2-cloud-dc4676-deploy/"
