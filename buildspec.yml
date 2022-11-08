@@ -40,11 +40,11 @@ phases:
       - ls
       - zip -r LF1-index-photos-test.zip .
       - ls
-      - aws s3 sync "./LF1-index-photos-test.zip" "s3://hw2-cloud-dc4676-deploy/"
+      - aws s3 cp "./LF1-index-photos-test.zip" "s3://hw2-cloud-dc4676-deploy/"
       - cd ..
       - cd LF2-search-photos
       - zip -r LF2-search-photos-test.zip .
-      - aws s3 sync "./LF2-search-photos-test.zip" "s3://hw2-cloud-dc4676-deploy/"
+      - aws s3 cp "./LF2-search-photos-test.zip" "s3://hw2-cloud-dc4676-deploy/"
       - pwd
       # - aws s3 sync "./codebuild/output/LF1-index-photos-test.zip" "s3://hw2-cloud-dc4676-deploy/"
       - aws s3 sync "./codebuild/output/*/src/LF2-search-photos-test.zip" "s3://hw2-cloud-dc4676-deploy/"
