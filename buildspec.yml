@@ -39,6 +39,8 @@ phases:
       - cd LF1-index-photos
       - ls
       - zip -r LF1-index-photos-test.zip .
+      - ls
+      - cd .. && ls
       - aws s3 sync "LF1-index-photos-test.zip" "s3://hw2-cloud-dc4676-deploy/"
       - cd ..
       - cd LF2-search-photos
