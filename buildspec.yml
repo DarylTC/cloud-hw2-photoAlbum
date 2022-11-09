@@ -52,7 +52,7 @@ phases:
       - cd ..
       - cd Frontend
       - cd Code
-      - aws s3 sync . "s3://hw2-cloud-dc4676-deploy/"
+      - aws s3 sync . "s3://b1-dc4676/"
   post_build:
     commands:
       - aws lambda update-function-code \--function-name  LF1-index-photos \--s3-bucket hw2-cloud-dc4676-deploy --s3-key LF1-index-photos.zip
