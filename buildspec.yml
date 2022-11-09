@@ -49,6 +49,10 @@ phases:
       # - aws s3 sync "./codebuild/output/LF1-index-photos-test.zip" "s3://hw2-cloud-dc4676-deploy/"
       # - aws s3 sync "./codebuild/output/*/src/LF2-search-photos-test.zip" "s3://hw2-cloud-dc4676-deploy/"
       # - command
+      - cd ..
+      - cd Frontend
+      - cd Code
+      - aws s3 sync . "s3://hw2-cloud-dc4676-deploy/"
   post_build:
     commands:
       - aws lambda update-function-code \--function-name  LF1-index-photos \--s3-bucket hw2-cloud-dc4676-deploy --s3-key LF1-index-photos.zip
